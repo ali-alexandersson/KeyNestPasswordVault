@@ -297,7 +297,7 @@ def handle_login(username, password, feedback_label):
 
                 # Step 2: Verify the password using bcrypt
                 if bcrypt.checkpw(password.encode(), stored_hashed_password.encode()):
-                    # Step 3: Decrypt the user's personal master key (even if unused, verify it works)
+                    # Step 3: Decrypt the user's personal master key
                     cipher_suite.decrypt(user_encrypted_master_key.encode())
 
                     # Display success message and delay before transitioning
